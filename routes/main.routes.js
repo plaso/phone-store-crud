@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
 const phonesController = require('../controllers/phones.controller');
+const manufacturersController = require('../controllers/manufacturers.controller');
 
 router.get('/', phonesController.getHome);
 
@@ -22,5 +23,10 @@ router.get('/smartphones/:id', phonesController.getPhoneDetail);
 // Delete
 
 router.post('/smartphones/:id/delete', phonesController.deletePhone);
+
+
+// Manufacturers
+router.get('/manufacturers', manufacturersController.getManufacturers);
+router.get('/manufacturers/:id', manufacturersController.getManufacturerDetail);
 
 module.exports = router;

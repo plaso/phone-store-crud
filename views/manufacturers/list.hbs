@@ -1,0 +1,18 @@
+<div class="bg-danger text-light py-5">
+  <div class="container">
+    <h1>Fabricantes</h1>
+    <p>Nuestro mas fieles fabricantes de Smartphones</p>
+  </div>
+</div>
+
+<div class="container mt-3 mb-4">
+  <h2>Nuestros fabricantes más destacados</h2>
+
+  <div class="mt-3 row row-cols-1 row-cols-md-3 g-4">
+    {{#each manufacturers as |manufacturer|}}
+      <div class="col">
+        {{> manufacturerCard manufacturer=manufacturer}}
+      </div>
+    {{/each}}
+  </div>
+</div>

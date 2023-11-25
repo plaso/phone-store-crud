@@ -1,0 +1,20 @@
+<div class="container">
+  <div class=" my-3 row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <img class="img-fluid" src="{{manufacturer.image}}" />
+    </div>
+    <div class="col">
+      <h2>{{manufacturer.name}}</h2>
+      <p class="text-danger fs-2 fw-bold">{{manufacturer.year}}</p>
+    </div>
+
+  </div>
+
+
+  <h2>Productos del fabricante</h2>
+  <div class="my-3 row row-cols-1 row-cols-md-3 g-4">
+    {{#each manufacturer.phones as |phone|}}
+      {{> phoneCard phone=phone}}
+    {{/each}}
+  </div>
+</div>

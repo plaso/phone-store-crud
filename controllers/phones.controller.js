@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Phone = require('../models/Phone.model');
+const Manufacturer = require('../models/Manufacturer.model');
 const createError = require('http-errors');
 
 module.exports.getHome = (req, res, next) => {
@@ -20,6 +21,7 @@ module.exports.getPhones = (req, res, next) => {
 
 module.exports.getPhoneDetail = (req, res, next) => {
   Phone.findById(req.params.id)
+    .populate('manufacturer') // findById(phone.manufacturer) -> esto lo hace mongoose por mi
     .then((phone) => {
       if (phone) {
         res.render('phones/detail', { phone });
@@ -31,7 +33,11 @@ module.exports.getPhoneDetail = (req, res, next) => {
 }
 
 module.exports.getPhoneCreateForm = (req, res, next) => {
-  res.render('phones/form');
+  Manufacturer.find()
+    .then(manufacturers => {
+      res.render('phones/form', { manufacturers });
+    })
+    .catch(err => next(err))
 }
 
 module.exports.doPhoneCreate = (req, res, next) => {
@@ -42,7 +48,10 @@ module.exports.doPhoneCreate = (req, res, next) => {
     .catch(err => {
       if (err instanceof mongoose.Error.ValidationError) {
         // Renderizar la vista de nuevo, pero con los errores
-        res.render('phones/form', { errors: err.errors, phone: req.body })
+        return Manufacturer.find()
+          .then(manufacturers => {
+            res.render('phones/form', { errors: err.errors, manufacturers, phone: req.body })
+          })
       } else {
         next(err)
       }
@@ -50,17 +59,18 @@ module.exports.doPhoneCreate = (req, res, next) => {
 }
 
 module.exports.getPhoneEditForm = (req, res, next) => {
-  // Me traigo el phone a editar de la base de datos
-  Phone.findById(req.params.id)
-    .then(phone => {
+  Promise.all([
+    Phone.findById(req.params.id), // El telefono de la vista
+    Manufacturer.find()
+  ])
+    .then((response) => {
+      const [phone, manufacturers] = response;
       if (phone) {
-        res.render('phones/form', { phone, isEdit: true })
+        res.render('phones/form', { phone, manufacturers, isEdit: true })
       } else {
         next(createError(404, 'No hemos encontrado este smartphone'))
       }
     })
-    .catch(err => next(err))
-
 }
 
 module.exports.doPhoneEdit = (req, res, next) => {
@@ -71,7 +81,10 @@ module.exports.doPhoneEdit = (req, res, next) => {
     .catch(err => {
       if (err instanceof mongoose.Error.ValidationError) {
         // Renderizar la vista de nuevo, pero con los errores
-        res.render('phones/form', { errors: err.errors, phone: req.body, isEdit: true })
+        return Manufacturer.find()
+          .then(manufacturers => {
+            res.render('phones/form', { errors: err.errors, manufacturers, phone: req.body, isEdit: true })
+          })
       } else {
         next(err)
       }

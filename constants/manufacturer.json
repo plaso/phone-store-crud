@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Xiaomi",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Xiaomi_logo_%282021-%29.svg",
+    "year": "2010"
+  },
+  {
+    "name": "Realme",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Realme_logo.svg/2560px-Realme_logo.svg.png",
+    "year": "2018"
+  },
+  {
+    "name": "Apple",
+    "image": "https://1000logos.net/wp-content/uploads/2016/10/Apple-Logo.jpg",
+    "year": "1976"
+  }
+]

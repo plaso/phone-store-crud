@@ -4,7 +4,7 @@
   </div>
   <div class="col">
     <h2>{{phone.name}}</h2>
-    <p>{{phone.manufacturer}}</p>
+    <p><a href="/manufacturers/{{phone.manufacturer._id}}">{{phone.manufacturer.name}}</a></p>
     <p class="text-danger fs-2 fw-bold">{{phone.price}}€</p>
     <p class="fw-bold mt-5">Sobre este producto</p>
     <p>{{phone.description}}</p>

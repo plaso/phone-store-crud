@@ -13,7 +13,19 @@
     <form action="/smartphones" method="POST">
   {{/if}}
     {{> input value=phone.name name="name" label="Nombre del producto" type="text" placeholder="Introduce aquí el nombre" error=errors.name}}
-    {{> input value=phone.manufacturer name="manufacturer" label="Fabricante" type="text" placeholder="Introduce aquí del fabricante" error=errors.manufacturer}}
+
+    <div class="mb-3">
+      <label for="manufacturer" class="form-label">Fabricante</label>
+      <select class="form-select {{#if errors.description}}is-invalid{{/if}}" id="manufacturer" name="manufacturer">
+        {{#each manufacturers as |manufacturer|}}
+          <option value="{{manufacturer._id}}">{{manufacturer.name}}</option>
+        {{/each}}
+      </select>
+      {{#if errors.description}}
+        <div class="invalid-feedback">{{errors.description}}</div>
+      {{/if}}
+    </div>
+
     {{> input value=phone.price name="price" label="Precio" type="number" min="1" error=errors.price}}
     {{> input value=phone.image name="image" label="Imagen del producto" type="text" placeholder="Introduce aquí la URL" error=errors.image}}
 
