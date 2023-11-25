@@ -1,0 +1,23 @@
+<div class="container my-3">
+  <h1>Crea un nuevo smartphone</h1>
+
+  <form action="/smartphones" method="POST">
+    {{> input value=phone.name name="name" label="Nombre del producto" type="text" placeholder="Introduce aquí el nombre" error=errors.name}}
+    {{> input value=phone.manufacturer name="manufacturer" label="Fabricante" type="text" placeholder="Introduce aquí del fabricante" error=errors.manufacturer}}
+    {{> input value=phone.price name="price" label="Precio" type="number" min="1" error=errors.price}}
+    {{> input value=phone.image name="image" label="Imagen del producto" type="text" placeholder="Introduce aquí la URL" error=errors.image}}
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Descripción</label>
+      <textarea
+        name="description"  id="description" rows="3"
+        class="form-control {{#if errors.description}}is-invalid{{/if}}"
+      >{{phone.description}}</textarea>
+      {{#if errors.description}}
+        <div class="invalid-feedback">{{errors.description}}</div>
+      {{/if}}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Crear producto</button>
+  </form>
+</div>

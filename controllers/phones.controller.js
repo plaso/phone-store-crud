@@ -1,8 +1,9 @@
+const mongoose = require('mongoose');
 const Phone = require('../models/Phone.model');
 const createError = require('http-errors');
 
 module.exports.getHome = (req, res, next) => {
-  Phone.find().limit(3)
+  Phone.find().limit(3).sort({ createdAt: 'desc' })
     .then(phones => {
       res.render('home', { phones });
     })
@@ -10,7 +11,7 @@ module.exports.getHome = (req, res, next) => {
 }
 
 module.exports.getPhones = (req, res, next) => {
-  Phone.find()
+  Phone.find().sort({ createdAt: 'desc' })
     .then(phones => {
       res.render('phones/list', { phones });
     })
@@ -30,5 +31,20 @@ module.exports.getPhoneDetail = (req, res, next) => {
 }
 
 module.exports.getPhoneCreateForm = (req, res, next) => {
-  res.render('phones/create');
+  res.render('phones/form');
+}
+
+module.exports.doPhoneCreate = (req, res, next) => {
+  Phone.create(req.body)
+    .then(phoneDB => {
+      res.redirect('/smartphones');
+    })
+    .catch(err => {
+      if (err instanceof mongoose.Error.ValidationError) {
+        // Renderizar la vista de nuevo, pero con los errores
+        res.render('phones/form', { errors: err.errors, phone: req.body })
+      } else {
+        next(err)
+      }
+    })
 }

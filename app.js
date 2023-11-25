@@ -9,6 +9,7 @@ require('./config/db.config');
 const app = express();
 
 app.use(logger('dev'));
+// Cuando mandamos un formulario, la petición es de tipo urlenconded, sin esta línea, express no entiende el req.body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
