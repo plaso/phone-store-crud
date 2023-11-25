@@ -1,0 +1,19 @@
+<div class="bg-success text-light py-5">
+  <div class="container">
+    <h1>Smartphones</h1>
+    <p>Los smartphones son esenciales en tu día a día. Por ello ofrecemos la élite de los teléfonos móviles. Los mejores móviles de alta gama y calidad precio, de las mejores marcas y con los mejores descuentos.</p>
+    <p>¡Conectividad, innovación y potencia al alcance de tu dedo!</p>
+  </div>
+</div>
+
+<div class="container mt-3 mb-4">
+  <h2>Nuestros productos más destacados</h2>
+
+  <div class="mt-3 row row-cols-1 row-cols-md-3 g-4">
+    {{#each phones as |phone|}}
+      <div class="col">
+        {{> phoneCard phone=phone}}
+      </div>
+    {{/each}}
+  </div>
+</div>

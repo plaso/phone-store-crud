@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const DB_NAME = 'crud-cities';
+const DB_NAME = 'phone-store';
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017';
 
 mongoose.connect(`${MONGO_URI}/${DB_NAME}`)

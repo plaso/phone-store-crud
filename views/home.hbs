@@ -1,0 +1,13 @@
+<div class="my-4 container">
+  {{#if phones}}
+    <h2>Nuestros últimos productos</h2>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {{#each phones as |phone|}}
+      <div class="col">
+        {{> phoneCard phone=phone}}
+      </div>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
