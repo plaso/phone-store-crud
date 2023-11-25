@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const { REQUIRED_FIELD } = require('../constants/errorMessages');
 
+const urlRegex = /^(https?|ftp):\/\/(-\.)?([^\s\/?\.#-]+\.?)+(\/[^\s]*)?$/i;
+
 const phoneSchema = mongoose.Schema(
   {
     name: {
@@ -17,7 +19,8 @@ const phoneSchema = mongoose.Schema(
     },
     image: {
       type: String,
-      required: [true, REQUIRED_FIELD]
+      required: [true, REQUIRED_FIELD],
+      match: [urlRegex, "URL inválida"],
     },
     description: {
       type: String,
