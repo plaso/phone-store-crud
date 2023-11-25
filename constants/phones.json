@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Xiaomi Redmi 10C 4/128GB Azul Libre",
+    "manufacturer": "Xiaomi",
+    "price": 119.99,
+    "image": "https://thumb.pccomponentes.com/w-530-530/articles/1021/10217930/1733-xiaomi-redmi-10c-4-128gb-azul-libre.jpg",
+    "description": "Redmi 10C está equipado con un procesador Snapdragon® 680 con memoria UFS ultrarrápida, una cámara principal de alta resolución de 50MP y cámara para selfies de 5MP, pantalla inmersiva Dot Drop de 6,71\", altavoz potente con sonido vibrante, batería de alta capacidad de 5000 mAh (típica) y soporta carga rápida de 18W."
+  },
+  {
+    "name": "Xiaomi Redmi Note 12 4/128GB Gris Libre + Cable USB-C a Jack",
+    "manufacturer": "Xiaomi",
+    "price": 149.99,
+    "image": "https://thumb.pccomponentes.com/w-530-530/articles/1067/10672939/1599-xiaomi-redmi-note-12-4-128gb-gris-libre-cable-usb-c-a-jack.jpg",
+    "description": "Redmi Note 12 cuenta con una triple cámara con IA de 48MP y una pantalla AMOLED de 120 Hz y con protección Corning® Gorilla® Glass para capturar e inmortalizar cualquier imagen con la máxima resolución."
+  },
+  {
+    "name": "Realme C55 8/256GB Rainy Night Libre",
+    "manufacturer": "Realme",
+    "price": 169,
+    "image": "https://thumb.pccomponentes.com/w-530-530/articles/1067/10671044/1252-realme-c55-8-256gb-rainy-night-libre.jpg",
+    "description": "Una de las características más impresionantes del realme C55 es su cámara trasera de 64MP con IA. Esto significa que podrás tomar fotos detalladas y nítidas con una gran cantidad de información visual en cada toma. Por ejemplo, podrías tomar fotos de paisajes impresionantes con una gran cantidad de detalles, como montañas, lagos y ríos. También podrás capturar fotos de cerca de objetos pequeños, como flores o insectos, para apreciar sus detalles más finos."
+  },
+  {
+    "name": "Apple iPhone 13 128GB Blanco Estrella Libre",
+    "manufacturer": "Apple",
+    "price": 659,
+    "image": "https://thumb.pccomponentes.com/w-530-530/articles/57/578962/128-apple-iphone-13-128gb-blanco-estrella-libre.jpg",
+    "description": "iPhone 13: Tu nuevo superpoder. Nuestro sistema de cámara dual más avanzado. El chip que hace morder el polvo a la competencia. Un subidón de autonomía que vaya si notarás. Ceramic Shield, más duro que cualquier vidrio de smartphone. Pantalla Super Retina XDR de 6,1 pulgadas. Diseño robusto con bordes planos y resistente al agua."
+  },
+  {
+    "name": "Apple iPhone 13 Mini 128GB Medianoche Libre",
+    "manufacturer": "Apple",
+    "price": 719,
+    "image": "https://thumb.pccomponentes.com/w-530-530/articles/57/578991/1347-apple-iphone-13-mini-128gb-medianoche-libre-comprar.jpg",
+    "description": "iPhone 13 mini: Tu nuevo superpoder. Nuestro sistema de cámara dual más avanzado. El chip que hace morder el polvo a la competencia. Un subidón de autonomía que vaya si notarás. Ceramic Shield, más duro que cualquier vidrio de smartphone. Pantalla Super Retina XDR de 5,4 pulgadas. Diseño robusto con bordes planos y resistente al agua."
+  }
+]
